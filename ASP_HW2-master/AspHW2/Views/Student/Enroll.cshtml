@@ -1,0 +1,14 @@
+﻿@model AspHW2.ViewModels.StudentCoursesViewModel
+
+@{
+    ViewBag.Title = "Enroll";
+}
+
+<h2>Enroll</h2>
+
+<form action="@Url.Action("Enroll")" method="post">
+    @Html.DropDownListFor(a => Model.StudentId, new SelectList(ViewBag.Students, "Id", "Name"))
+    @Html.DropDownListFor(a => Model.CourseId, new SelectList(ViewBag.Courses, "Id", "Title"))
+
+    <input type="submit" name="Submit" value="Submit" />
+</form>
